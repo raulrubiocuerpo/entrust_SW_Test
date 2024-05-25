@@ -48,9 +48,9 @@ void paginateDocument (ifstream& f, ofstream& out, int& maxLineSize, int& maxLin
     // read the document.txt file word by word
 
     while (f >> word){
-        if (line.size() + word.size() > 80){ // if the line + the next word is bigger than maxLineSize characters, print the line and start the next one with the following word
-            out << line << endl;
-            line = word;
+        if (line.size() + word.size() + 1 > 80){ // if the line + the next word + a space is bigger than maxLineSize characters
+            out << line << endl; //print the line as it was
+            line = word; // start the next one with that word
             lineCount++;
             if (lineCount == 25){ // if the line count is 25, print the page number and reset the line count
                 out << "=== Page " << pageCount << " ===" << endl;
@@ -64,6 +64,7 @@ void paginateDocument (ifstream& f, ofstream& out, int& maxLineSize, int& maxLin
 
     if (!line.empty()) { // if there is a line left to print, print it
         out << line << endl;
+        lineCount++;
     }
     if (lineCount > 0) { // if the line count is bigger than 0, print the last page number
         out << "=== Page " << pageCount << " ===" << endl; 

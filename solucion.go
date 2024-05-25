@@ -7,7 +7,9 @@ import (
 	"os"
 )
 
-type PaginatedParameters struct { // struct to store the given parameters of the paginated document
+// struct to store the given parameters of the paginated document
+
+type PaginatedParameters struct {
 	MaxLineSize  int
 	MaxLineCount int
 }

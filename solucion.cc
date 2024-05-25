@@ -67,7 +67,7 @@ void paginateDocument (ifstream& f, ofstream& out, int& maxLineSize, int& maxLin
         lineCount++;
     }
     if (lineCount > 0) { // if the line count is bigger than 0, print the last page number
-        out << "=== Page " << pageCount << " ===" << endl; 
+        out << "=== Page " << pageCount << " ==="; 
     }
 }
 

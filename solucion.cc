@@ -3,7 +3,7 @@
 #include <string>
 using namespace std;
 
-// create a struc to store the initial parameters
+// create a struct to store the initial parameters
 
 struct PaginatedParameters {
     int maxLineSize = 80;
@@ -43,6 +43,8 @@ void openOutputDocument(ofstream& out, string& outputDocumentName) {
     checkError(out);
 }
 
+// Function to paginate the input document and write on the output document
+
 void paginateDocument (ifstream& f, ofstream& out, int& maxLineSize, int& maxLineCount, string& word, string& line, int& lineCount, int& pageCount) {
 
     // read the document.txt file word by word
@@ -75,11 +77,11 @@ int main() {
     PaginatedParameters paginatedParameters;
 
     ifstream f; 
-    string inputDocumentName = "document.txt"; // declare a string to store the document name
+    string inputDocumentName = "./document.txt"; // declare a string to store the input document route
     openInputDocument(f, inputDocumentName); // open the document.txt file
 
     ofstream out;
-    string outputDocumentName = "paginated_document_cc.txt"; // declare a string to store the solution name
+    string outputDocumentName = "./paginated_document_cc.txt"; // declare a string to store the output document route
     openOutputDocument(out, outputDocumentName); // open / create the paginated_document.txt file where the solution will be stored
 
     string word = ""; // declare a strings to store each word of the document

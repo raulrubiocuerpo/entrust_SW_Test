@@ -95,11 +95,11 @@ func main() {
 		MaxLineCount: 25,
 	}
 
-	var inputDocument = "document.txt" // declare a variable to store the name of the input document
+	var inputDocument = "./document.txt" // declare a variable to store the name of the input document route
 
 	var f = openInputDocument(inputDocument) // create a file object to read the input document
 
-	var outputDocument = "paginated_document_go.txt" // declare a variable to store the name of the output document
+	var outputDocument = "./paginated_document_go.txt" // declare a variable to store the name of the output document route
 
 	var out = createOutputDocument(outputDocument) // create a file object to write on the output document
 
